@@ -1,0 +1,21 @@
+{
+	"name" : "staccato/settings",
+	"description" : "Staccato settings component",
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Krystian Karaś",
+			"email" : "dev@karashome.pl"
+		}
+	],
+	"require" : {
+		"php" : ">=7.0",
+		"symfony/http-foundation" : "^3.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Staccato\\Component\\Settings\\" : "src/Component",
+			"Staccato\\Bundle\\SettingsBundle\\" : "src/Bundle/SettingsBundle"
+		}
+	}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+    
+        <service id="staccato_settings.settings_manager.default" class="Staccato\Component\Settings\Doctrine\SettingsManager" public="false" lazy="true">
+            <argument type="service" id="staccato_settings.settings_storage" />
+        </service>
+        
+        <service id="staccato_settings.settings_storage.default" class="Staccato\Component\Settings\Doctrine\SettingsStorage" public="false" lazy="true">
+            <argument type="service" id="fos_user.object_manager" />
+            <argument>%staccato_settings.model.setting.class%</argument>
+            
+            <!-- enable doctrine mapping -->
+            <tag name="staccato.mapping.doctrine" />
+        </service>
+        
+    </services>
+</container>
